@@ -37,7 +37,7 @@ resource "aws_eks_cluster" "aws_eks" {
 
  
   vpc_config {
-    subnet_ids = ["subnet-0fa4291408e40572d", "subnet-052df50ea28b5e8a1"]
+    subnet_ids = ["subnet-0fa4291408e40572d", "subnet-07edb89092805cd2f"]
   }
 
  
@@ -95,7 +95,7 @@ resource "aws_iam_role_policy_attachment" "AmazonEC2ContainerRegistryReadOnly" {
 resource "aws_eks_node_group" "node" {
   cluster_name    = aws_eks_cluster.aws_eks.name
   node_group_name = "EKS_node_group"
-  subnet_ids      = ["subnet-0fa4291408e40572d", "subnet-052df50ea28b5e8a1"]
+  subnet_ids      = ["subnet-0fa4291408e40572d", "subnet-07edb89092805cd2f"]
   node_role_arn   = aws_iam_role.eks_nodes.arn
 
  
